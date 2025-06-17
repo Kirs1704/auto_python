@@ -1,0 +1,1 @@
+# There is no any code here. This lesson was about SQL language
