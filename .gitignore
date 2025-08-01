@@ -3,3 +3,5 @@
 __pycache__
 creds.py
 .env
+allure-reports
+allure-results
