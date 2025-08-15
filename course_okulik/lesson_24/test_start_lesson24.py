@@ -89,7 +89,6 @@ def test_work_with_allert_just_assept(browser):
     button.click()
     alert = Alert(browser)
     alert.accept()
-    sleep(3)
 
 @pytest.mark.skip('test skip')
 def test_work_with_allert_accept_or_cancel(browser):
@@ -99,7 +98,6 @@ def test_work_with_allert_accept_or_cancel(browser):
     button.click()
     allert = Alert(browser)
     allert.dismiss()
-    sleep(3)
 
 
 def test_work_with_allert_send_the_text_and_accept(browser):
@@ -110,7 +108,6 @@ def test_work_with_allert_send_the_text_and_accept(browser):
     allert = Alert(browser)
     allert.send_keys('Hello, bro!')
     allert.accept()
-    sleep(3)
 
 
 
