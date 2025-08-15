@@ -47,12 +47,12 @@ def test_select(browser):
     browser.get('https://www.qa-practice.com/elements/button/disabled')
     button = browser.find_element(By.ID, 'submit-id-submit')
     print('------ Начало теста -------')
-    print('Кнока активна' if button.is_enabled() else 'Кнопка неактивна')
+    print('Кнопка активна' if button.is_enabled() else 'Кнопка неактивна')
     select_row = browser.find_element(By.NAME, 'select_state')
     select_helper = Select(select_row)
     select_helper.select_by_value('enabled')
     print('---- Значение изменено ----')
-    print('Кнока активна' if button.is_enabled() else 'Кнопка неактивна')
+    print('Кнопка активна' if button.is_enabled() else 'Кнопка неактивна')
     assert button.is_enabled()
 
 def test_await_for_timer_is_over(browser):
