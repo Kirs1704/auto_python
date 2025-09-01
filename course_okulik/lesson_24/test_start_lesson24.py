@@ -10,6 +10,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import pytest
 from time import sleep
 
+
 @pytest.mark.skip('test skip')
 def test_new_tab_open(browser):
     browser.get('https://www.qa-practice.com/elements/new_tab/link')
@@ -99,7 +100,7 @@ def test_work_with_allert_accept_or_cancel(browser):
     allert = Alert(browser)
     allert.dismiss()
 
-
+@pytest.mark.skip('test skip')
 def test_work_with_allert_send_the_text_and_accept(browser):
     browser.get('https://www.qa-practice.com/elements/alert/alert')
     browser.find_element(By.XPATH, '//a[text()="Prompt box"]').click()
@@ -108,6 +109,19 @@ def test_work_with_allert_send_the_text_and_accept(browser):
     allert = Alert(browser)
     allert.send_keys('Hello, bro!')
     allert.accept()
+
+def test_upload_the_file(browser):
+    browser.get('https://the-internet.herokuapp.com/upload')
+    upload = browser.find_element(By.ID, 'file-upload')
+    button = browser.find_element(By.ID, 'file-submit')
+    result = (By.XPATH, '//h3[text()="File Uploaded!"]')
+    upload.send_keys('C:\\Users\\user\\Downloads\\ava2.png')
+    button.click()
+    wait = WebDriverWait(browser, 10)
+    target_element = wait.until(EC.visibility_of_element_located(result))
+    assert target_element.text == 'File Uploaded!'
+
+
 
 
 

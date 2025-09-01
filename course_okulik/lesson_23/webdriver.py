@@ -39,7 +39,7 @@ def test_xpath(browser):
 @pytest.mark.skip('later')
 def test_placeholder(browser):
     browser.get('https://www.qa-practice.com/elements/input/simple')
-    target_element = browser.find_element(By.CSS_SELECTOR, 'input[name="text_string"')
+    target_element = browser.find_element(By.CSS_SELECTOR, 'input[name="text_string"]')
     assert target_element.get_attribute('placeholder') == 'Submit me'
 
 @pytest.mark.skip('later')
